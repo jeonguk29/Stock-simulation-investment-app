@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FB5B92B2E128BE30021BAA4 /* YahooStocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB5B92A2E128BE30021BAA4 /* YahooStocksKit */; };
+		2FB5B92D2E128BE30021BAA4 /* StocksAPIExec in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB5B92C2E128BE30021BAA4 /* StocksAPIExec */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F96612F2E126CAB00701362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F9661192E126CA900701362 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F9661202E126CA900701362;
+			remoteInfo = TradeUp;
+		};
+		2F9661392E126CAB00701362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F9661192E126CA900701362 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F9661202E126CA900701362;
+			remoteInfo = TradeUp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2F9661212E126CA900701362 /* TradeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F96612E2E126CAB00701362 /* TradeUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F9661382E126CAB00701362 /* TradeUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2F8CB1922E1BAE9B002F4ACF /* Exceptions for "TradeUp" folder in "TradeUp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2F9661202E126CA900701362 /* TradeUp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2F9661232E126CA900701362 /* TradeUp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2F8CB1922E1BAE9B002F4ACF /* Exceptions for "TradeUp" folder in "TradeUp" target */,
+			);
+			path = TradeUp;
+			sourceTree = "<group>";
+		};
+		2F9661312E126CAB00701362 /* TradeUpTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TradeUpTests;
+			sourceTree = "<group>";
+		};
+		2F96613B2E126CAB00701362 /* TradeUpUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TradeUpUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F96611E2E126CA900701362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FB5B92B2E128BE30021BAA4 /* YahooStocksKit in Frameworks */,
+				2FB5B92D2E128BE30021BAA4 /* StocksAPIExec in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F96612B2E126CAB00701362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F9661352E126CAB00701362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F9661182E126CA900701362 = {
+			isa = PBXGroup;
+			children = (
+				2F9661232E126CA900701362 /* TradeUp */,
+				2F9661312E126CAB00701362 /* TradeUpTests */,
+				2F96613B2E126CAB00701362 /* TradeUpUITests */,
+				2F9661222E126CA900701362 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F9661222E126CA900701362 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F9661212E126CA900701362 /* TradeUp.app */,
+				2F96612E2E126CAB00701362 /* TradeUpTests.xctest */,
+				2F9661382E126CAB00701362 /* TradeUpUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F9661202E126CA900701362 /* TradeUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F9661422E126CAB00701362 /* Build configuration list for PBXNativeTarget "TradeUp" */;
+			buildPhases = (
+				2F96611D2E126CA900701362 /* Sources */,
+				2F96611E2E126CA900701362 /* Frameworks */,
+				2F96611F2E126CA900701362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2F9661232E126CA900701362 /* TradeUp */,
+			);
+			name = TradeUp;
+			packageProductDependencies = (
+				2FB5B92A2E128BE30021BAA4 /* YahooStocksKit */,
+				2FB5B92C2E128BE30021BAA4 /* StocksAPIExec */,
+			);
+			productName = TradeUp;
+			productReference = 2F9661212E126CA900701362 /* TradeUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F96612D2E126CAB00701362 /* TradeUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F9661452E126CAB00701362 /* Build configuration list for PBXNativeTarget "TradeUpTests" */;
+			buildPhases = (
+				2F96612A2E126CAB00701362 /* Sources */,
+				2F96612B2E126CAB00701362 /* Frameworks */,
+				2F96612C2E126CAB00701362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F9661302E126CAB00701362 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2F9661312E126CAB00701362 /* TradeUpTests */,
+			);
+			name = TradeUpTests;
+			packageProductDependencies = (
+			);
+			productName = TradeUpTests;
+			productReference = 2F96612E2E126CAB00701362 /* TradeUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2F9661372E126CAB00701362 /* TradeUpUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F9661482E126CAB00701362 /* Build configuration list for PBXNativeTarget "TradeUpUITests" */;
+			buildPhases = (
+				2F9661342E126CAB00701362 /* Sources */,
+				2F9661352E126CAB00701362 /* Frameworks */,
+				2F9661362E126CAB00701362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F96613A2E126CAB00701362 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2F96613B2E126CAB00701362 /* TradeUpUITests */,
+			);
+			name = TradeUpUITests;
+			packageProductDependencies = (
+			);
+			productName = TradeUpUITests;
+			productReference = 2F9661382E126CAB00701362 /* TradeUpUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F9661192E126CA900701362 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					2F9661202E126CA900701362 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					2F96612D2E126CAB00701362 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 2F9661202E126CA900701362;
+					};
+					2F9661372E126CAB00701362 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 2F9661202E126CA900701362;
+					};
+				};
+			};
+			buildConfigurationList = 2F96611C2E126CA900701362 /* Build configuration list for PBXProject "TradeUp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F9661182E126CA900701362;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2FB5B9292E128BE30021BAA4 /* XCRemoteSwiftPackageReference "YahooStocksKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2F9661222E126CA900701362 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F9661202E126CA900701362 /* TradeUp */,
+				2F96612D2E126CAB00701362 /* TradeUpTests */,
+				2F9661372E126CAB00701362 /* TradeUpUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F96611F2E126CA900701362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F96612C2E126CAB00701362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F9661362E126CAB00701362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F96611D2E126CA900701362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F96612A2E126CAB00701362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F9661342E126CAB00701362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F9661302E126CAB00701362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F9661202E126CA900701362 /* TradeUp */;
+			targetProxy = 2F96612F2E126CAB00701362 /* PBXContainerItemProxy */;
+		};
+		2F96613A2E126CAB00701362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F9661202E126CA900701362 /* TradeUp */;
+			targetProxy = 2F9661392E126CAB00701362 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2F9661402E126CAB00701362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5KA6J79S24;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2F9661412E126CAB00701362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5KA6J79S24;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F9661432E126CAB00701362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5KA6J79S24;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TradeUp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeonguk29.TradeUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F9661442E126CAB00701362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5KA6J79S24;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TradeUp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeonguk29.TradeUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2F9661462E126CAB00701362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5KA6J79S24;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeonguk29.TradeUpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeUp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TradeUp";
+			};
+			name = Debug;
+		};
+		2F9661472E126CAB00701362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5KA6J79S24;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeonguk29.TradeUpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeUp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TradeUp";
+			};
+			name = Release;
+		};
+		2F9661492E126CAB00701362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5KA6J79S24;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeonguk29.TradeUpUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TradeUp;
+			};
+			name = Debug;
+		};
+		2F96614A2E126CAB00701362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5KA6J79S24;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeonguk29.TradeUpUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TradeUp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F96611C2E126CA900701362 /* Build configuration list for PBXProject "TradeUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F9661402E126CAB00701362 /* Debug */,
+				2F9661412E126CAB00701362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F9661422E126CAB00701362 /* Build configuration list for PBXNativeTarget "TradeUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F9661432E126CAB00701362 /* Debug */,
+				2F9661442E126CAB00701362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F9661452E126CAB00701362 /* Build configuration list for PBXNativeTarget "TradeUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F9661462E126CAB00701362 /* Debug */,
+				2F9661472E126CAB00701362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F9661482E126CAB00701362 /* Build configuration list for PBXNativeTarget "TradeUpUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F9661492E126CAB00701362 /* Debug */,
+				2F96614A2E126CAB00701362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2FB5B9292E128BE30021BAA4 /* XCRemoteSwiftPackageReference "YahooStocksKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jeonguk29/YahooStocksKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2FB5B92A2E128BE30021BAA4 /* YahooStocksKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FB5B9292E128BE30021BAA4 /* XCRemoteSwiftPackageReference "YahooStocksKit" */;
+			productName = YahooStocksKit;
+		};
+		2FB5B92C2E128BE30021BAA4 /* StocksAPIExec */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FB5B9292E128BE30021BAA4 /* XCRemoteSwiftPackageReference "YahooStocksKit" */;
+			productName = StocksAPIExec;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 2F9661192E126CA900701362 /* Project object */;
+}
