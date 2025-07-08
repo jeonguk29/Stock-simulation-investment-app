@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3D68E42E1D4210005148D9 /* TradeUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68CC2E1D4210005148D9 /* TradeUpApp.swift */; };
+		2F3D68E52E1D4210005148D9 /* Quote+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68CE2E1D4210005148D9 /* Quote+Extensions.swift */; };
+		2F3D68E62E1D4210005148D9 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68D02E1D4210005148D9 /* Stubs.swift */; };
+		2F3D68E72E1D4210005148D9 /* TickerListRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68D22E1D4210005148D9 /* TickerListRowData.swift */; };
+		2F3D68E82E1D4210005148D9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68D52E1D4210005148D9 /* Utils.swift */; };
+		2F3D68E92E1D4210005148D9 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68D72E1D4210005148D9 /* AppViewModel.swift */; };
+		2F3D68EA2E1D4210005148D9 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68D82E1D4210005148D9 /* QuotesViewModel.swift */; };
+		2F3D68EB2E1D4210005148D9 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68DA2E1D4210005148D9 /* EmptyStateView.swift */; };
+		2F3D68EC2E1D4210005148D9 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68DB2E1D4210005148D9 /* ErrorStateView.swift */; };
+		2F3D68ED2E1D4210005148D9 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68DC2E1D4210005148D9 /* LoadingStateView.swift */; };
+		2F3D68EE2E1D4210005148D9 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68DE2E1D4210005148D9 /* MainListView.swift */; };
+		2F3D68EF2E1D4210005148D9 /* TickerListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68DF2E1D4210005148D9 /* TickerListRowView.swift */; };
+		2F3D68F02E1D4210005148D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68E12E1D4210005148D9 /* ContentView.swift */; };
+		2F3D68F12E1D4210005148D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F3D68D42E1D4210005148D9 /* Assets.xcassets */; };
 		2FB5B92B2E128BE30021BAA4 /* YahooStocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB5B92A2E128BE30021BAA4 /* YahooStocksKit */; };
 		2FB5B92D2E128BE30021BAA4 /* StocksAPIExec in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB5B92C2E128BE30021BAA4 /* StocksAPIExec */; };
 /* End PBXBuildFile section */
@@ -29,30 +43,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F3D68CC2E1D4210005148D9 /* TradeUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeUpApp.swift; sourceTree = "<group>"; };
+		2F3D68CE2E1D4210005148D9 /* Quote+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quote+Extensions.swift"; sourceTree = "<group>"; };
+		2F3D68D02E1D4210005148D9 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
+		2F3D68D22E1D4210005148D9 /* TickerListRowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRowData.swift; sourceTree = "<group>"; };
+		2F3D68D42E1D4210005148D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2F3D68D52E1D4210005148D9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2F3D68D72E1D4210005148D9 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		2F3D68D82E1D4210005148D9 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
+		2F3D68DA2E1D4210005148D9 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		2F3D68DB2E1D4210005148D9 /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
+		2F3D68DC2E1D4210005148D9 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		2F3D68DE2E1D4210005148D9 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
+		2F3D68DF2E1D4210005148D9 /* TickerListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRowView.swift; sourceTree = "<group>"; };
+		2F3D68E12E1D4210005148D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2F3D68E22E1D4210005148D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F9661212E126CA900701362 /* TradeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F96612E2E126CAB00701362 /* TradeUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9661382E126CAB00701362 /* TradeUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		2F8CB1922E1BAE9B002F4ACF /* Exceptions for "TradeUp" folder in "TradeUp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 2F9661202E126CA900701362 /* TradeUp */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2F9661232E126CA900701362 /* TradeUp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				2F8CB1922E1BAE9B002F4ACF /* Exceptions for "TradeUp" folder in "TradeUp" target */,
-			);
-			path = TradeUp;
-			sourceTree = "<group>";
-		};
 		2F9661312E126CAB00701362 /* TradeUpTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TradeUpTests;
@@ -92,10 +103,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F3D68CD2E1D4210005148D9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2F3D68CC2E1D4210005148D9 /* TradeUpApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2F3D68CF2E1D4210005148D9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2F3D68CE2E1D4210005148D9 /* Quote+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2F3D68D12E1D4210005148D9 /* Mocks & Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				2F3D68D02E1D4210005148D9 /* Stubs.swift */,
+			);
+			path = "Mocks & Stubs";
+			sourceTree = "<group>";
+		};
+		2F3D68D32E1D4210005148D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F3D68D22E1D4210005148D9 /* TickerListRowData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2F3D68D62E1D4210005148D9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2F3D68D42E1D4210005148D9 /* Assets.xcassets */,
+				2F3D68D52E1D4210005148D9 /* Utils.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2F3D68D92E1D4210005148D9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2F3D68D72E1D4210005148D9 /* AppViewModel.swift */,
+				2F3D68D82E1D4210005148D9 /* QuotesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2F3D68DD2E1D4210005148D9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2F3D68DA2E1D4210005148D9 /* EmptyStateView.swift */,
+				2F3D68DB2E1D4210005148D9 /* ErrorStateView.swift */,
+				2F3D68DC2E1D4210005148D9 /* LoadingStateView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2F3D68E02E1D4210005148D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F3D68DD2E1D4210005148D9 /* Common */,
+				2F3D68DE2E1D4210005148D9 /* MainListView.swift */,
+				2F3D68DF2E1D4210005148D9 /* TickerListRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2F3D68E32E1D4210005148D9 /* TradeUp */ = {
+			isa = PBXGroup;
+			children = (
+				2F3D68CD2E1D4210005148D9 /* App */,
+				2F3D68CF2E1D4210005148D9 /* Extensions */,
+				2F3D68D12E1D4210005148D9 /* Mocks & Stubs */,
+				2F3D68D32E1D4210005148D9 /* Models */,
+				2F3D68D62E1D4210005148D9 /* Resource */,
+				2F3D68D92E1D4210005148D9 /* ViewModels */,
+				2F3D68E02E1D4210005148D9 /* Views */,
+				2F3D68E12E1D4210005148D9 /* ContentView.swift */,
+				2F3D68E22E1D4210005148D9 /* Info.plist */,
+			);
+			path = TradeUp;
+			sourceTree = "<group>";
+		};
 		2F9661182E126CA900701362 = {
 			isa = PBXGroup;
 			children = (
-				2F9661232E126CA900701362 /* TradeUp */,
+				2F3D68E32E1D4210005148D9 /* TradeUp */,
 				2F9661312E126CAB00701362 /* TradeUpTests */,
 				2F96613B2E126CAB00701362 /* TradeUpUITests */,
 				2F9661222E126CA900701362 /* Products */,
@@ -126,9 +223,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				2F9661232E126CA900701362 /* TradeUp */,
 			);
 			name = TradeUp;
 			packageProductDependencies = (
@@ -237,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3D68F12E1D4210005148D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +356,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3D68E42E1D4210005148D9 /* TradeUpApp.swift in Sources */,
+				2F3D68E52E1D4210005148D9 /* Quote+Extensions.swift in Sources */,
+				2F3D68E62E1D4210005148D9 /* Stubs.swift in Sources */,
+				2F3D68E72E1D4210005148D9 /* TickerListRowData.swift in Sources */,
+				2F3D68E82E1D4210005148D9 /* Utils.swift in Sources */,
+				2F3D68E92E1D4210005148D9 /* AppViewModel.swift in Sources */,
+				2F3D68EA2E1D4210005148D9 /* QuotesViewModel.swift in Sources */,
+				2F3D68EB2E1D4210005148D9 /* EmptyStateView.swift in Sources */,
+				2F3D68EC2E1D4210005148D9 /* ErrorStateView.swift in Sources */,
+				2F3D68ED2E1D4210005148D9 /* LoadingStateView.swift in Sources */,
+				2F3D68EE2E1D4210005148D9 /* MainListView.swift in Sources */,
+				2F3D68EF2E1D4210005148D9 /* TickerListRowView.swift in Sources */,
+				2F3D68F02E1D4210005148D9 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
