@@ -11,21 +11,14 @@ import StocksAPI
 @main
 struct TradeUpApp: App {
     
-    let stocksAPI = StocksAPI()
+    @StateObject var appVM = AppViewModel()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .onAppear {
-                    Task {
-                        do {
-                            let quotes = try await stocksAPI.quoteService.getQuotes(symbols: ["AAPL"])
-                            print(quotes)
-                        } catch {
-                            print(error.localizedDescription)
-                        }
-                    }
-                }
+            NavigationStack {
+                MainListView()
+            }
+            .environmentObject(appVM)
         }
     }
 }
