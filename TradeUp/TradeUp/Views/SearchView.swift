@@ -28,14 +28,17 @@ struct SearchView: View {
                             Task { @MainActor in
                                 appVM.toggleTicker(ticker)
                             }
-                        }
+                        } 
                     )
                 )
             )
-            .contentShape(Rectangle())
-            .onTapGesture {}
+            //.contentShape(Rectangle())
+            //.onTapGesture {}
         }
         .listStyle(.plain)
+        .refreshable { await quotesVM.fetchQuotes(tickers: searchVM.tickers) }
+        .task(id: searchVM.tickers) { await quotesVM.fetchQuotes(tickers: searchVM.tickers) }
+        // 티커 변경시 마다 새로고침
         .overlay { listSearchOverlay }
     }
     
@@ -43,7 +46,11 @@ struct SearchView: View {
     private var listSearchOverlay: some View {
         switch searchVM.phase {
         case .failure(let error):
-            ErrorStateView(error: error.localizedDescription){}
+            ErrorStateView(error: error.localizedDescription){
+                Task {
+                    await searchVM.searchTickers()
+                }
+            }
         case .empty:
             EmptyStateView(text: searchVM.emptyListText)
         case .fetching:

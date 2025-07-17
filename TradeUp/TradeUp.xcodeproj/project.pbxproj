@@ -10,6 +10,8 @@
 		042B0C9A2E227E8A00B4A017 /* FetchPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0C992E227E8A00B4A017 /* FetchPhase.swift */; };
 		042B0C9C2E227F2F00B4A017 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0C9B2E227F2F00B4A017 /* SearchView.swift */; };
 		042B0C9E2E227F3E00B4A017 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0C9D2E227F3E00B4A017 /* SearchViewModel.swift */; };
+		04D8F9E12E28E5CE00DE046E /* StockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8F9E02E28E5CE00DE046E /* StockRepository.swift */; };
+		04D8F9E32E28F24500DE046E /* MockStocksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8F9E22E28F24500DE046E /* MockStocksAPI.swift */; };
 		2F3D68E42E1D4210005148D9 /* TradeUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68CC2E1D4210005148D9 /* TradeUpApp.swift */; };
 		2F3D68E52E1D4210005148D9 /* Quote+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68CE2E1D4210005148D9 /* Quote+Extensions.swift */; };
 		2F3D68E62E1D4210005148D9 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68D02E1D4210005148D9 /* Stubs.swift */; };
@@ -49,6 +51,8 @@
 		042B0C992E227E8A00B4A017 /* FetchPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhase.swift; sourceTree = "<group>"; };
 		042B0C9B2E227F2F00B4A017 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		042B0C9D2E227F3E00B4A017 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		04D8F9E02E28E5CE00DE046E /* StockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRepository.swift; sourceTree = "<group>"; };
+		04D8F9E22E28F24500DE046E /* MockStocksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStocksAPI.swift; sourceTree = "<group>"; };
 		2F3D68CC2E1D4210005148D9 /* TradeUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeUpApp.swift; sourceTree = "<group>"; };
 		2F3D68CE2E1D4210005148D9 /* Quote+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quote+Extensions.swift"; sourceTree = "<group>"; };
 		2F3D68D02E1D4210005148D9 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
@@ -109,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04D8F9DF2E28E5BD00DE046E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04D8F9E02E28E5CE00DE046E /* StockRepository.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		2F3D68CD2E1D4210005148D9 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				2F3D68D02E1D4210005148D9 /* Stubs.swift */,
+				04D8F9E22E28F24500DE046E /* MockStocksAPI.swift */,
 			);
 			path = "Mocks & Stubs";
 			sourceTree = "<group>";
@@ -185,6 +198,7 @@
 		2F3D68E32E1D4210005148D9 /* TradeUp */ = {
 			isa = PBXGroup;
 			children = (
+				04D8F9DF2E28E5BD00DE046E /* Services */,
 				2F3D68CD2E1D4210005148D9 /* App */,
 				2F3D68CF2E1D4210005148D9 /* Extensions */,
 				2F3D68D12E1D4210005148D9 /* Mocks & Stubs */,
@@ -376,8 +390,10 @@
 				2F3D68EA2E1D4210005148D9 /* QuotesViewModel.swift in Sources */,
 				2F3D68EB2E1D4210005148D9 /* EmptyStateView.swift in Sources */,
 				2F3D68EC2E1D4210005148D9 /* ErrorStateView.swift in Sources */,
+				04D8F9E32E28F24500DE046E /* MockStocksAPI.swift in Sources */,
 				042B0C9C2E227F2F00B4A017 /* SearchView.swift in Sources */,
 				2F3D68ED2E1D4210005148D9 /* LoadingStateView.swift in Sources */,
+				04D8F9E12E28E5CE00DE046E /* StockRepository.swift in Sources */,
 				2F3D68EE2E1D4210005148D9 /* MainListView.swift in Sources */,
 				2F3D68EF2E1D4210005148D9 /* TickerListRowView.swift in Sources */,
 				2F3D68F02E1D4210005148D9 /* ContentView.swift in Sources */,

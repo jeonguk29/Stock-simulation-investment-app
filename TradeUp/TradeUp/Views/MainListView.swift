@@ -23,6 +23,8 @@ struct MainListView: View {
                 attributionToolbar
             }
             .searchable(text: $searchVM.query)
+            .refreshable { await quotesVM.fetchQuotes(tickers: appVM.tickers) }
+            .task(id: appVM.tickers) { await quotesVM.fetchQuotes(tickers: appVM.tickers) }
     }
     
     private var tickerListView: some View {
@@ -34,7 +36,7 @@ struct MainListView: View {
                         name: ticker.shortname,
                         price: quotesVM.priceForTicker(ticker),
                         type: .main))
-                .contentShape(Rectangle()) // 역할이 뭘까
+                .contentShape(Rectangle())
                 .onTapGesture { }
             }
             .onDelete { appVM.removeTickers(atOffsets: $0) }
