@@ -28,7 +28,7 @@ struct SearchView: View {
                             Task { @MainActor in
                                 appVM.toggleTicker(ticker)
                             }
-                        } 
+                        }
                     )
                 )
             )
@@ -63,48 +63,50 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     
     @StateObject static var stubbedSearchVM: SearchViewModel = {
-        var vm = SearchViewModel()
-        vm.phase = .success(Ticker.stubs)
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallback = { Ticker.stubs }
+        return SearchViewModel(query: "Apple", stocksAPI: mock)
     }()
     
     @StateObject static var emptySearchVM: SearchViewModel = {
-        var vm = SearchViewModel()
-        vm.query = "Theranos"
-        vm.phase = .empty
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallback = { [] }
+        return SearchViewModel(query: "Theranos", stocksAPI: mock)
     }()
     
     @StateObject static var loadingSearchVM: SearchViewModel = {
-        var vm = SearchViewModel()
-        vm.phase = .fetching
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallback = {
+            await withCheckedContinuation { _ in }
+        }
+        return SearchViewModel(query: "Apple", stocksAPI: mock)
     }()
     
     @StateObject static var errorSearchVM: SearchViewModel = {
-        var vm = SearchViewModel()
-        vm.phase = .failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "An Error has been occurred"]))
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallback = { throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "An Error has been occured"]) }
+        return SearchViewModel(query: "Apple", stocksAPI: mock)
     }()
     
     @StateObject static var appVM: AppViewModel = {
         let vm = AppViewModel()
-        vm.tickers = Array(Ticker.stubs.prefix(upTo:2)) //0,1 만 가져와서 체크되도록
+        vm.tickers = Array(Ticker.stubs.prefix(upTo:2)) 
         return vm
     }()
     
     static var quotesVM: QuotesViewModel = {
-        var vm = QuotesViewModel()
-        vm.quotesDict = Quote.stubsDict
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedFetchQuotesCallback = { Quote.stubs }
+        return QuotesViewModel(stocksAPI: mock)
     }()
+    
     
     static var previews: some View {
         Group {
             NavigationStack {
                 SearchView(quotesVM: quotesVM, searchVM: stubbedSearchVM)
             }
-            .searchable(text: $stubbedSearchVM.query) // 이거 뭐지
+            .searchable(text: $stubbedSearchVM.query) 
             .previewDisplayName("Results")
             
             NavigationStack {
