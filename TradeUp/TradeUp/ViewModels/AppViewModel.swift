@@ -12,7 +12,9 @@ import StocksAPI
 @MainActor
 class AppViewModel: ObservableObject {
     
-    @Published var tickers: [Ticker] = []
+    @Published var tickers: [Ticker] = [] {
+        didSet { saveTickers() } // 값에 변경이 생기면 로칼에 저장
+    }
     var titleText = "TradeUp"
     @Published var subtitleText: String
     var emptyTickersText = "Search & add symbol to see stock quotes"
@@ -25,8 +27,35 @@ class AppViewModel: ObservableObject {
         return df
     }()
     
-    init() {
+    let tickerListRepository: TickerListRepository
+    
+    init(repository: TickerListRepository = TickerPlistRepository()) {
+        self.tickerListRepository = repository
         self.subtitleText = subtitleDateFormatter.string(from: Date())
+        loadTickers()
+    }
+    
+    private func loadTickers() {
+        Task { [weak self] in
+            guard let self = self else { return }
+            do {
+                self.tickers = try await tickerListRepository.load()
+            } catch {
+                print(error.localizedDescription)
+                self.tickers = []
+            }
+        }
+    }
+    
+    private func saveTickers() {
+        Task { [weak self] in
+            guard let self = self else { return }
+            do {
+                try await self.tickerListRepository.save(self.tickers)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func isAddedToMyTickers(ticker: Ticker) -> Bool {

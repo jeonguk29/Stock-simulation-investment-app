@@ -32,10 +32,13 @@ struct SearchView: View {
                     )
                 )
             )
-            .contentShape(Rectangle())
-            .onTapGesture {}
+            //.contentShape(Rectangle())
+            //.onTapGesture {}
         }
         .listStyle(.plain)
+        .refreshable { await quotesVM.fetchQuotes(tickers: searchVM.tickers) }
+        .task(id: searchVM.tickers) { await quotesVM.fetchQuotes(tickers: searchVM.tickers) }
+        // 티커 변경시 마다 새로고침
         .overlay { listSearchOverlay }
     }
     
@@ -43,7 +46,11 @@ struct SearchView: View {
     private var listSearchOverlay: some View {
         switch searchVM.phase {
         case .failure(let error):
-            ErrorStateView(error: error.localizedDescription){}
+            ErrorStateView(error: error.localizedDescription){
+                Task {
+                    await searchVM.searchTickers()
+                }
+            }
         case .empty:
             EmptyStateView(text: searchVM.emptyListText)
         case .fetching:
@@ -56,48 +63,50 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     
     @StateObject static var stubbedSearchVM: SearchViewModel = {
-        var vm = SearchViewModel()
-        vm.phase = .success(Ticker.stubs)
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallback = { Ticker.stubs }
+        return SearchViewModel(query: "Apple", stocksAPI: mock)
     }()
     
     @StateObject static var emptySearchVM: SearchViewModel = {
-        var vm = SearchViewModel()
-        vm.query = "Theranos"
-        vm.phase = .empty
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallback = { [] }
+        return SearchViewModel(query: "Theranos", stocksAPI: mock)
     }()
     
     @StateObject static var loadingSearchVM: SearchViewModel = {
-        var vm = SearchViewModel()
-        vm.phase = .fetching
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallback = {
+            await withCheckedContinuation { _ in }
+        }
+        return SearchViewModel(query: "Apple", stocksAPI: mock)
     }()
     
     @StateObject static var errorSearchVM: SearchViewModel = {
-        var vm = SearchViewModel()
-        vm.phase = .failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "An Error has been occurred"]))
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallback = { throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "An Error has been occured"]) }
+        return SearchViewModel(query: "Apple", stocksAPI: mock)
     }()
     
     @StateObject static var appVM: AppViewModel = {
-        let vm = AppViewModel()
-        vm.tickers = Array(Ticker.stubs.prefix(upTo:2)) //0,1 만 가져와서 체크되도록
-        return vm
+        var mock = MockTickerListRepository()
+        mock.stubbedLoad = { Array(Ticker.stubs.prefix(upTo: 2)) }
+        return AppViewModel(repository: mock)
     }()
     
     static var quotesVM: QuotesViewModel = {
-        var vm = QuotesViewModel()
-        vm.quotesDict = Quote.stubsDict
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedFetchQuotesCallback = { Quote.stubs }
+        return QuotesViewModel(stocksAPI: mock)
     }()
+    
     
     static var previews: some View {
         Group {
             NavigationStack {
                 SearchView(quotesVM: quotesVM, searchVM: stubbedSearchVM)
             }
-            .searchable(text: $stubbedSearchVM.query) // 이거 뭐지
+            .searchable(text: $stubbedSearchVM.query) 
             .previewDisplayName("Results")
             
             NavigationStack {
