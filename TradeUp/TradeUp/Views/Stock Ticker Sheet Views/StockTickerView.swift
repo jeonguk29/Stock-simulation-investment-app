@@ -66,6 +66,16 @@ struct StockTickerView: View {
                 .padding(.horizontal)
             
             Divider()
+            
+            DateRangePickerView(selectedRange: $selectedRange)
+            
+            Divider()
+            
+            Text("Chart View Placeholder")
+                .padding(.horizontal)
+                .frame(maxWidth: .infinity, minHeight: 220)
+            
+            Divider().padding([.horizontal, .top])
         }
         .scrollIndicators(.hidden)
         .frame(maxWidth: .infinity, alignment: .leading) // 이게 alignment: .leading 어떤 의미지?
