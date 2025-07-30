@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import  StocksAPI
+import StocksAPI
 
 extension ChartRange: Identifiable {
     
