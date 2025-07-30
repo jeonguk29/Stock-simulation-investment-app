@@ -15,6 +15,8 @@ class AppViewModel: ObservableObject {
     @Published var tickers: [Ticker] = [] {
         didSet { saveTickers() } // 값에 변경이 생기면 로칼에 저장
     }
+    @Published var selectedTicker: Ticker?
+    
     var titleText = "TradeUp"
     @Published var subtitleText: String
     var emptyTickersText = "Search & add symbol to see stock quotes"
