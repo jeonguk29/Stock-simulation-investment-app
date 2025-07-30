@@ -76,6 +76,10 @@ struct StockTickerView: View {
                 .frame(maxWidth: .infinity, minHeight: 220)
             
             Divider().padding([.horizontal, .top])
+            
+            quoteDetailRowView
+                .frame(maxWidth: .infinity, minHeight: 80)
+            
         }
         .scrollIndicators(.hidden)
         .frame(maxWidth: .infinity, alignment: .leading) // 이게 alignment: .leading 어떤 의미지?
@@ -140,6 +144,30 @@ struct StockTickerView: View {
         }
         .font(.subheadline.weight(.semibold))
         .foregroundColor(Color(uiColor: .secondaryLabel))
+    }
+    
+    @ViewBuilder
+    private var quoteDetailRowView: some View {
+        switch quoteVM.phase {
+        case .fetching: LoadingStateView()
+        case .failure(let error): ErrorStateView(error: "Quote: \(error.localizedDescription)")
+                .padding(.horizontal)
+        case .success(let quote):
+            ScrollView(.horizontal) {
+                HStack(spacing: 16) {
+                    ForEach(quote.columnItems) {
+                        QuoteDetailRowColumnView(item: $0)
+                    }
+                }
+                .padding(.horizontal)
+                .font(.caption.weight(.semibold))
+                .lineLimit(1)
+            }
+            .scrollIndicators(.hidden)
+            
+            
+        default: EmptyView()
+        }
     }
 }
 
