@@ -8,9 +8,10 @@
 import Foundation
 import StocksAPI
 
+// MARK: - 차트 날짜 범위
 extension ChartRange: Identifiable {
     
-    public var id: Self { self } // 검색 해보자 Self, self 엘런 자료에 있었던거 같음
+    public var id: Self { self }
     
     var title: String {
         switch self {

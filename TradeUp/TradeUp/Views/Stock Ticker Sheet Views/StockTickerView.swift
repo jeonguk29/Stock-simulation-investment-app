@@ -28,7 +28,7 @@ struct StockTickerView: View {
         .task { await quoteVM.fetchQuote() }
     }
     
-    // 심볼, 종목 이름, 닫기 버튼
+    // MARK: - 심볼, 종목 이름, 닫기 버튼
     private var headerView: some View {
         HStack(alignment: .lastTextBaseline) {
             Text(quoteVM.ticker.symbol).font(.title.bold())
@@ -58,6 +58,7 @@ struct StockTickerView: View {
         .buttonStyle(.plain)
     }
     
+    // MARK: - 전체 세로 스크롤 뷰
     private var scrollView: some View {
         ScrollView {
             priceDiffRowView
@@ -82,10 +83,10 @@ struct StockTickerView: View {
             
         }
         .scrollIndicators(.hidden)
-        .frame(maxWidth: .infinity, alignment: .leading) // 이게 alignment: .leading 어떤 의미지?
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
-    // 가격 및 등락 정보 표시 (장중 거래 중, 장 종료 후)
+   // MARK: -  가격 및 등락 정보 표시 (장중 거래 중, 장 종료 후)
     private var priceDiffRowView: some View {
         VStack(alignment: .leading, spacing: 8) {
             if let quote = quoteVM.quote {
@@ -113,7 +114,7 @@ struct StockTickerView: View {
         }
     }
     
-    // 가격/변동 정보 출력 포맷
+    // MARK: - 가격/변동 정보 출력 포맷
     private func priceDiffStackView(price: String, diff: String, caption: String?) -> some View {
         VStack(alignment: .leading) {
             HStack(alignment: .lastTextBaseline, spacing: 16) {
@@ -130,7 +131,7 @@ struct StockTickerView: View {
         }
     }
     
-    // 거래소 및 통화 정보
+    // MARK: - 거래소 및 통화 정보
     private var exchangeCurrencyView: some View {
         HStack(spacing: 4) {
             if let exchange = quoteVM.ticker.exchDisp {
@@ -146,6 +147,7 @@ struct StockTickerView: View {
         .foregroundColor(Color(uiColor: .secondaryLabel))
     }
     
+    // MARK: - 주식 관련 디테일 정보 (시가, 종가 등등)
     @ViewBuilder
     private var quoteDetailRowView: some View {
         switch quoteVM.phase {

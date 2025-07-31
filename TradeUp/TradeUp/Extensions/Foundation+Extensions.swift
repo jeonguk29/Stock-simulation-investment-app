@@ -7,7 +7,7 @@
 
 import Foundation
 
-// 큰 수 단위를 약어로 표시하는 extension
+// MARK: - 큰 수 단위를 약어로 표시하는 extension
 extension Double {
     
     //https://stackoverflow.com/questions/18267211/ios-convert-large-numbers-to-smaller-format
