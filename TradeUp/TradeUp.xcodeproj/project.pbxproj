@@ -12,8 +12,14 @@
 		042B0C9E2E227F3E00B4A017 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0C9D2E227F3E00B4A017 /* SearchViewModel.swift */; };
 		048328692E3111B1006204CF /* TickerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048328682E3111B1006204CF /* TickerListRepository.swift */; };
 		0483286B2E311640006204CF /* MockTickerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483286A2E311640006204CF /* MockTickerListRepository.swift */; };
+		0483287B2E321343006204CF /* StockTickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483287A2E321343006204CF /* StockTickerView.swift */; };
+		0483287D2E321380006204CF /* TickerQuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483287C2E321380006204CF /* TickerQuoteViewModel.swift */; };
 		04D8F9E12E28E5CE00DE046E /* StockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8F9E02E28E5CE00DE046E /* StockRepository.swift */; };
 		04D8F9E32E28F24500DE046E /* MockStocksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8F9E22E28F24500DE046E /* MockStocksAPI.swift */; };
+		04E2B75F2E38F58200B11533 /* DateRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B75E2E38F58200B11533 /* DateRangePickerView.swift */; };
+		04E2B7612E38F8D800B11533 /* ChartRange+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B7602E38F8D800B11533 /* ChartRange+Extensions.swift */; };
+		04E2B7632E39FE1900B11533 /* QuoteDetailRowColumnItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B7622E39FE1900B11533 /* QuoteDetailRowColumnItem.swift */; };
+		04E2B7672E3A00EA00B11533 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B7662E3A00EA00B11533 /* Foundation+Extensions.swift */; };
 		2F3D68E42E1D4210005148D9 /* TradeUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68CC2E1D4210005148D9 /* TradeUpApp.swift */; };
 		2F3D68E52E1D4210005148D9 /* Quote+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68CE2E1D4210005148D9 /* Quote+Extensions.swift */; };
 		2F3D68E62E1D4210005148D9 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D68D02E1D4210005148D9 /* Stubs.swift */; };
@@ -55,8 +61,14 @@
 		042B0C9D2E227F3E00B4A017 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		048328682E3111B1006204CF /* TickerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRepository.swift; sourceTree = "<group>"; };
 		0483286A2E311640006204CF /* MockTickerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTickerListRepository.swift; sourceTree = "<group>"; };
+		0483287A2E321343006204CF /* StockTickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTickerView.swift; sourceTree = "<group>"; };
+		0483287C2E321380006204CF /* TickerQuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerQuoteViewModel.swift; sourceTree = "<group>"; };
 		04D8F9E02E28E5CE00DE046E /* StockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRepository.swift; sourceTree = "<group>"; };
 		04D8F9E22E28F24500DE046E /* MockStocksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStocksAPI.swift; sourceTree = "<group>"; };
+		04E2B75E2E38F58200B11533 /* DateRangePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerView.swift; sourceTree = "<group>"; };
+		04E2B7602E38F8D800B11533 /* ChartRange+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChartRange+Extensions.swift"; sourceTree = "<group>"; };
+		04E2B7622E39FE1900B11533 /* QuoteDetailRowColumnItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailRowColumnItem.swift; sourceTree = "<group>"; };
+		04E2B7662E3A00EA00B11533 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		2F3D68CC2E1D4210005148D9 /* TradeUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeUpApp.swift; sourceTree = "<group>"; };
 		2F3D68CE2E1D4210005148D9 /* Quote+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quote+Extensions.swift"; sourceTree = "<group>"; };
 		2F3D68D02E1D4210005148D9 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
@@ -117,6 +129,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		048328792E321312006204CF /* Stock Ticker Sheet Views */ = {
+			isa = PBXGroup;
+			children = (
+				0483287A2E321343006204CF /* StockTickerView.swift */,
+				04E2B75E2E38F58200B11533 /* DateRangePickerView.swift */,
+				04E2B7622E39FE1900B11533 /* QuoteDetailRowColumnItem.swift */,
+			);
+			path = "Stock Ticker Sheet Views";
+			sourceTree = "<group>";
+		};
 		04D8F9DF2E28E5BD00DE046E /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				2F3D68CE2E1D4210005148D9 /* Quote+Extensions.swift */,
+				04E2B7602E38F8D800B11533 /* ChartRange+Extensions.swift */,
+				04E2B7662E3A00EA00B11533 /* Foundation+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,6 +200,7 @@
 				2F3D68D72E1D4210005148D9 /* AppViewModel.swift */,
 				2F3D68D82E1D4210005148D9 /* QuotesViewModel.swift */,
 				042B0C9D2E227F3E00B4A017 /* SearchViewModel.swift */,
+				0483287C2E321380006204CF /* TickerQuoteViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,6 +218,7 @@
 		2F3D68E02E1D4210005148D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				048328792E321312006204CF /* Stock Ticker Sheet Views */,
 				2F3D68DD2E1D4210005148D9 /* Common */,
 				2F3D68DE2E1D4210005148D9 /* MainListView.swift */,
 				2F3D68DF2E1D4210005148D9 /* TickerListRowView.swift */,
@@ -386,23 +412,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F3D68E42E1D4210005148D9 /* TradeUpApp.swift in Sources */,
+				0483287B2E321343006204CF /* StockTickerView.swift in Sources */,
 				2F3D68E52E1D4210005148D9 /* Quote+Extensions.swift in Sources */,
 				042B0C9E2E227F3E00B4A017 /* SearchViewModel.swift in Sources */,
 				2F3D68E62E1D4210005148D9 /* Stubs.swift in Sources */,
+				04E2B7632E39FE1900B11533 /* QuoteDetailRowColumnItem.swift in Sources */,
 				2F3D68E72E1D4210005148D9 /* TickerListRowData.swift in Sources */,
 				042B0C9A2E227E8A00B4A017 /* FetchPhase.swift in Sources */,
 				2F3D68E82E1D4210005148D9 /* Utils.swift in Sources */,
+				04E2B7612E38F8D800B11533 /* ChartRange+Extensions.swift in Sources */,
 				2F3D68E92E1D4210005148D9 /* AppViewModel.swift in Sources */,
 				2F3D68EA2E1D4210005148D9 /* QuotesViewModel.swift in Sources */,
 				2F3D68EB2E1D4210005148D9 /* EmptyStateView.swift in Sources */,
+				0483287D2E321380006204CF /* TickerQuoteViewModel.swift in Sources */,
 				2F3D68EC2E1D4210005148D9 /* ErrorStateView.swift in Sources */,
 				04D8F9E32E28F24500DE046E /* MockStocksAPI.swift in Sources */,
 				042B0C9C2E227F2F00B4A017 /* SearchView.swift in Sources */,
 				2F3D68ED2E1D4210005148D9 /* LoadingStateView.swift in Sources */,
+				04E2B7672E3A00EA00B11533 /* Foundation+Extensions.swift in Sources */,
 				04D8F9E12E28E5CE00DE046E /* StockRepository.swift in Sources */,
 				2F3D68EE2E1D4210005148D9 /* MainListView.swift in Sources */,
 				048328692E3111B1006204CF /* TickerListRepository.swift in Sources */,
 				0483286B2E311640006204CF /* MockTickerListRepository.swift in Sources */,
+				04E2B75F2E38F58200B11533 /* DateRangePickerView.swift in Sources */,
 				2F3D68EF2E1D4210005148D9 /* TickerListRowView.swift in Sources */,
 				2F3D68F02E1D4210005148D9 /* ContentView.swift in Sources */,
 			);

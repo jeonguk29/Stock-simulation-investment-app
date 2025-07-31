@@ -8,7 +8,6 @@
 import SwiftUI
 import StocksAPI
 
-@MainActor
 struct SearchView: View {
     
     @EnvironmentObject var appVM: AppViewModel
@@ -32,9 +31,16 @@ struct SearchView: View {
                     )
                 )
             )
-            //.contentShape(Rectangle())
-            //.onTapGesture {}
+            .contentShape(Rectangle())
+            .onTapGesture {
+                Task { @MainActor in
+                    appVM.selectedTicker = ticker
+                }
+            }
         }
+        .background(content: {
+            Color.white
+        })
         .listStyle(.plain)
         .refreshable { await quotesVM.fetchQuotes(tickers: searchVM.tickers) }
         .task(id: searchVM.tickers) { await quotesVM.fetchQuotes(tickers: searchVM.tickers) }
@@ -106,7 +112,7 @@ struct SearchView_Previews: PreviewProvider {
             NavigationStack {
                 SearchView(quotesVM: quotesVM, searchVM: stubbedSearchVM)
             }
-            .searchable(text: $stubbedSearchVM.query) 
+            .searchable(text: $stubbedSearchVM.query)
             .previewDisplayName("Results")
             
             NavigationStack {

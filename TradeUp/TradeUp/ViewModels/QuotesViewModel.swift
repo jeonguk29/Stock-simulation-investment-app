@@ -13,7 +13,7 @@ import StocksAPI
 class QuotesViewModel: ObservableObject {
     
     @Published var quotesDict: [String: Quote] = [:]
-    private let stocksAPI: StockRepository
+    let stocksAPI: StockRepository
     
     init(stocksAPI: StockRepository = StocksAPI()) {
         self.stocksAPI = stocksAPI

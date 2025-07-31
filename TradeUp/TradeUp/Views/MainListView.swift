@@ -24,6 +24,10 @@ struct MainListView: View {
             }
             .searchable(text: $searchVM.query)
             .refreshable { await quotesVM.fetchQuotes(tickers: appVM.tickers) }
+            .sheet(item: $appVM.selectedTicker) {
+                StockTickerView(quoteVM: .init(ticker: $0, stocksAPI: quotesVM.stocksAPI))
+                    .presentationDetents([.height(560)]) //?
+            }
             .task(id: appVM.tickers) { await quotesVM.fetchQuotes(tickers: appVM.tickers) }
     }
     
@@ -37,7 +41,9 @@ struct MainListView: View {
                         price: quotesVM.priceForTicker(ticker),
                         type: .main))
                 .contentShape(Rectangle())
-                .onTapGesture { }
+                .onTapGesture {
+                    appVM.selectedTicker = ticker
+                }
             }
             .onDelete { appVM.removeTickers(atOffsets: $0) }
         }
