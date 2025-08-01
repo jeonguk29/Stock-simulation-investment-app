@@ -16,17 +16,13 @@ struct ChartView: View {
     var body: some View {
         chart
             .chartYScale(
-                domain:
-                    data.items
-                    .map{
-                        $0.value
-                    }
-                    .min()!...data.items
-                    .map{
-                        $0.value
-                    }
-                    .max()!)
-            .chartPlotStyle { chartPlotStyle($0) }
+                domain: data.yAxisData.axisStart...data.yAxisData.axisEnd
+            )
+            .chartPlotStyle {
+                chartPlotStyle(
+                    $0
+                )
+            }
     }
     
     private var chart: some View {
@@ -40,7 +36,7 @@ struct ChartView: View {
                 
                 AreaMark(
                     x: .value("Time", $0.timestamp),
-                    yStart: .value("Min", data.items.map{$0.value}.min()!),
+                    yStart: .value("Min", data.yAxisData.axisStart),
                     yEnd: .value("Max", $0.value)
                 )
                 .foregroundStyle(LinearGradient(
@@ -49,6 +45,14 @@ struct ChartView: View {
                         .clear
                     ]), startPoint: .top, endPoint: .bottom)
                 ).opacity(0.3)
+            }
+            
+            // MARK: - 전일 종가 기준선 표시
+            /// 전일 종가가 존재하고, 그 값이 현재 차트 Y축 범위 안에 있다면, 해당 위치에 수평선을 그려서 사용자에게 기준선 표시
+            if let previousClose = data.previousCloseRuleMarkValue {
+                RuleMark(y: .value("Previous Close", previousClose))
+                    .lineStyle(.init(lineWidth: 0.1, dash: [2]))
+                    .foregroundStyle(.gray.opacity(0.3))
             }
         }
     }
