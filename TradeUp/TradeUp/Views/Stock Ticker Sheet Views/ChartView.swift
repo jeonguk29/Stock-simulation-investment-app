@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 import StocksAPI
 
 struct ChartView: View {
@@ -13,7 +14,50 @@ struct ChartView: View {
     let data: ChartViewData
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        chart
+            .chartYScale(
+                domain:
+                    data.items
+                    .map{
+                        $0.value
+                    }
+                    .min()!...data.items
+                    .map{
+                        $0.value
+                    }
+                    .max()!)
+            .chartPlotStyle { chartPlotStyle($0) }
+    }
+    
+    private var chart: some View {
+        Chart{
+            ForEach(data.items) {
+                LineMark(
+                    x: .value("Time", $0.timestamp),
+                    y: .value("Price", $0.value)
+                )
+            }
+        }
+    }
+    
+    private func chartPlotStyle(_ plotContent: ChartPlotContent) -> some View {
+        plotContent
+            .frame(height: 200)
+            .overlay {
+                Rectangle()
+                    .foregroundColor(.gray.opacity(0.5))
+                    .mask(ZStack {
+                        VStack {
+                            Spacer()
+                            Rectangle().frame(height: 1)
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            Rectangle().frame(width: 0.3)
+                        }
+                    })
+            }
     }
 }
 
