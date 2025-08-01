@@ -18,7 +18,7 @@ class ChartViewModel: ObservableObject {
     let ticker: Ticker
     let apiService: StockRepository
     
-    @AppStorage("selectedRange") private var _range = ChartRange.oneDay.rawValue 
+    @AppStorage("selectedRange") private var _range = ChartRange.oneDay.rawValue
     
     @Published var selectedRange = ChartRange.oneDay {
         didSet {
@@ -51,6 +51,19 @@ class ChartViewModel: ObservableObject {
     
     func transformChartViewData(_ data: ChartData) -> ChartViewData {
         let items = data.indicators.map{ ChartViewItem(timestamp: $0.timestamp, value: $0.close) }
-        return ChartViewData(items: items)
+        return ChartViewData(items: items, lineColor: getLineColor(data: data))
+    }
+    
+    // MARK: - 금일 주가 상승, 하락에 따른 차트 라인 컬러 변경
+    func getLineColor(data: ChartData) -> Color {
+        if let last = data.indicators.last?.close {
+            // 현재 거래일의 종가가 직전 종가보다 크면 그린 그렇지 않으면 레드 색상
+            if selectedRange == .oneDay, let prevClose = data.metadata.previousClose {
+                return last >= prevClose ? .green : .red
+            } else if let first = data.indicators.first?.close {
+                return last >= first ? .green : .red
+            }
+        }
+        return .blue
     }
 }

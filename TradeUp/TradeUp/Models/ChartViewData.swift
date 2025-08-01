@@ -12,6 +12,7 @@ struct ChartViewData: Identifiable {
     
     let id = UUID()
     let items: [ChartViewItem]
+    let lineColor: Color
 }
 
 struct ChartViewItem: Identifiable {

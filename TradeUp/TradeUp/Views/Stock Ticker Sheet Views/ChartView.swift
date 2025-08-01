@@ -36,6 +36,7 @@ struct ChartView: View {
                     x: .value("Time", $0.timestamp),
                     y: .value("Price", $0.value)
                 )
+                .foregroundStyle(data.lineColor)
             }
         }
     }
