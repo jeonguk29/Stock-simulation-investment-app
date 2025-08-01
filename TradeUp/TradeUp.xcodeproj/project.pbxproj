@@ -13,6 +13,7 @@
 		04312E2D2E3B4BC000F2EB7D /* ChartViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04312E2C2E3B4BC000F2EB7D /* ChartViewData.swift */; };
 		04312E312E3B521000F2EB7D /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04312E302E3B521000F2EB7D /* ChartViewModel.swift */; };
 		04312E332E3B59F300F2EB7D /* Chart+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04312E322E3B59F300F2EB7D /* Chart+Stubs.swift */; };
+		04312E3B2E3C94BD00F2EB7D /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04312E3A2E3C94BD00F2EB7D /* ChartView.swift */; };
 		048328692E3111B1006204CF /* TickerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048328682E3111B1006204CF /* TickerListRepository.swift */; };
 		0483286B2E311640006204CF /* MockTickerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483286A2E311640006204CF /* MockTickerListRepository.swift */; };
 		0483287B2E321343006204CF /* StockTickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483287A2E321343006204CF /* StockTickerView.swift */; };
@@ -65,6 +66,7 @@
 		04312E2C2E3B4BC000F2EB7D /* ChartViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewData.swift; sourceTree = "<group>"; };
 		04312E302E3B521000F2EB7D /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		04312E322E3B59F300F2EB7D /* Chart+Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chart+Stubs.swift"; sourceTree = "<group>"; };
+		04312E3A2E3C94BD00F2EB7D /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		048328682E3111B1006204CF /* TickerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRepository.swift; sourceTree = "<group>"; };
 		0483286A2E311640006204CF /* MockTickerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTickerListRepository.swift; sourceTree = "<group>"; };
 		0483287A2E321343006204CF /* StockTickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTickerView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				0483287A2E321343006204CF /* StockTickerView.swift */,
 				04E2B75E2E38F58200B11533 /* DateRangePickerView.swift */,
 				04E2B7622E39FE1900B11533 /* QuoteDetailRowColumnItem.swift */,
+				04312E3A2E3C94BD00F2EB7D /* ChartView.swift */,
 			);
 			path = "Stock Ticker Sheet Views";
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				04E2B7672E3A00EA00B11533 /* Foundation+Extensions.swift in Sources */,
 				04D8F9E12E28E5CE00DE046E /* StockRepository.swift in Sources */,
 				04312E332E3B59F300F2EB7D /* Chart+Stubs.swift in Sources */,
+				04312E3B2E3C94BD00F2EB7D /* ChartView.swift in Sources */,
 				2F3D68EE2E1D4210005148D9 /* MainListView.swift in Sources */,
 				048328692E3111B1006204CF /* TickerListRepository.swift in Sources */,
 				0483286B2E311640006204CF /* MockTickerListRepository.swift in Sources */,
