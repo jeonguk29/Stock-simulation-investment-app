@@ -37,6 +37,18 @@ struct ChartView: View {
                     y: .value("Price", $0.value)
                 )
                 .foregroundStyle(data.lineColor)
+                
+                AreaMark(
+                    x: .value("Time", $0.timestamp),
+                    yStart: .value("Min", data.items.map{$0.value}.min()!),
+                    yEnd: .value("Max", $0.value)
+                )
+                .foregroundStyle(LinearGradient(
+                    gradient: Gradient(colors: [
+                        data.lineColor,
+                        .clear
+                    ]), startPoint: .top, endPoint: .bottom)
+                ).opacity(0.3)
             }
         }
     }
@@ -105,6 +117,5 @@ struct ChartContainerView_Previews: View {
         .previewDisplayName(title)
         .task { await vm.fetchData() }
     }
-    
 }
 #endif
