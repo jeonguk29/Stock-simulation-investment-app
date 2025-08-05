@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Charts
 import StocksAPI
 
 @MainActor
@@ -25,6 +26,22 @@ class ChartViewModel: ObservableObject {
             _range = selectedRange.rawValue
         }
     }
+    
+    // Plottable: Swift Charts에서 X축으로 사용할 수 있는 값(예: Date, Int 등)에 적용되는 프로토콜
+    @Published var selectedX: (any Plottable)?
+    
+    // MARK: - 선택한 X값(날짜)에 대한 가격 문자열 반환
+    var selectedXRuleMark: (value: Date, text: String)? {
+        guard let selectedX = selectedX as? Date,
+              let chart
+        else { return nil }
+        let index = DateBins(thresholds: chart.items.map{ $0.timestamp }).index(for: selectedX)
+        return (selectedX, String(format: "%.2f", chart.items[index].value))
+    }
+    
+    var foregroundMarkColor: Color {
+         (selectedX != nil) ? .cyan : (chart?.lineColor ?? .cyan)
+     }
     
     init(ticker: Ticker, apiService: StockRepository = StocksAPI()) {
         self.ticker = ticker
@@ -78,10 +95,10 @@ class ChartViewModel: ObservableObject {
     // MARK: - Y축(종가 표시를 위한)이 어디서부터 어디까지 보여줄지 결정하는 함수
     func yAxisChartData(_ data: ChartData) -> ChartAxisData {
         let closes = data.indicators.map { $0.close } // 종가 목록 가져오기
-
+        
         var lowest = closes.min() ?? 0 // 종가 중 최솟값
         var highest = closes.max() ?? 0 // 종가 중 최댓값
-
+        
         // 만약 전일 종가가 있고, 현재 차트 범위가 하루짜리라면
         if let prevClose = data.metadata.previousClose, selectedRange == .oneDay {
             // 전일 종가가 최솟값보다 더 낮으면 그것도 보여야 하니까 최솟값 갱신
@@ -93,7 +110,7 @@ class ChartViewModel: ObservableObject {
                 highest = prevClose
             }
         }
-
+        
         // 범위에 약간 여유 주기 (그래야 선이 딱 붙지 않음)
         return ChartAxisData(
             axisStart: lowest - 0.01,

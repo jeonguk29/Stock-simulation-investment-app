@@ -12,9 +12,11 @@ import StocksAPI
 struct ChartView: View {
     
     let data: ChartViewData
+    @ObservedObject var vm: ChartViewModel
     
     var body: some View {
         chart
+            .chartXScale(domain: data.items.first!.timestamp...data.items.last!.timestamp) 
             .chartYScale(
                 domain: data.yAxisData.axisStart...data.yAxisData.axisEnd
             )
@@ -22,6 +24,17 @@ struct ChartView: View {
                 chartPlotStyle(
                     $0
                 )
+            }
+            .chartOverlay { proxy in
+                GeometryReader { gProxy in
+                    Rectangle().fill(.clear).contentShape(Rectangle())
+                        .gesture(DragGesture(minimumDistance: 0)
+                            .onChanged { onChangeDrag(value: $0, chartProxy: proxy, geometryProxy: gProxy) }
+                            .onEnded { _ in
+                                vm.selectedX = nil
+                            }
+                        )
+                }
             }
     }
     
@@ -32,7 +45,7 @@ struct ChartView: View {
                     x: .value("Time", $0.timestamp),
                     y: .value("Price", $0.value)
                 )
-                .foregroundStyle(data.lineColor)
+                .foregroundStyle(vm.foregroundMarkColor)
                 
                 AreaMark(
                     x: .value("Time", $0.timestamp),
@@ -41,7 +54,7 @@ struct ChartView: View {
                 )
                 .foregroundStyle(LinearGradient(
                     gradient: Gradient(colors: [
-                        data.lineColor,
+                        vm.foregroundMarkColor,
                         .clear
                     ]), startPoint: .top, endPoint: .bottom)
                 ).opacity(0.3)
@@ -53,6 +66,18 @@ struct ChartView: View {
                 RuleMark(y: .value("Previous Close", previousClose))
                     .lineStyle(.init(lineWidth: 0.1, dash: [2]))
                     .foregroundStyle(.gray.opacity(0.3))
+            }
+            
+            // MARK: - 선택 X값 세로선 + 주석 텍스트(가격) 표시
+            if let (selectedX, text) = vm.selectedXRuleMark {
+                RuleMark(x: .value("Selected timestamp", selectedX))
+                    .lineStyle(.init(lineWidth: 1))
+                    .annotation {
+                        Text(text)
+                            .font(.system(size: 14))
+                            .foregroundColor(.blue)
+                    }
+                    .foregroundStyle(vm.foregroundMarkColor)
             }
         }
     }
@@ -75,6 +100,18 @@ struct ChartView: View {
                         }
                     })
             }
+    }
+    
+    // MARK: - 사용자가 드래그한 위치의 X값(= 시간, 날짜)을 계산해서 선택된 포인트로 저장하는 핵심 함수
+    private func onChangeDrag(value: DragGesture.Value, chartProxy: ChartProxy, geometryProxy: GeometryProxy) {
+        // 차트 범위 체크
+        let xCurrent = value.location.x - geometryProxy[chartProxy.plotAreaFrame].origin.x
+        if let timestamp: Date = chartProxy.value(atX: xCurrent),
+           let startData = data.items.first?.timestamp,
+           let lastData = data.items.last?.timestamp,
+           timestamp >= startData && timestamp <= lastData {
+            vm.selectedX = timestamp
+        }
     }
 }
 
@@ -112,7 +149,7 @@ struct ChartContainerView_Previews: View {
             Text(title)
                 .padding(.bottom)
             if let chartViewData = vm.chart {
-                ChartView(data: chartViewData)
+                ChartView(data: chartViewData, vm: vm)
             }
         }
         .padding()
